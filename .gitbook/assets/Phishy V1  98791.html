@@ -1,0 +1,659 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Phishy V1 BTLO</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ef6dccd9-c558-469a-a63e-4e40645cac2e" class="page sans"><header><h1 class="page-title">Phishy V1 BTLO</h1></header><div class="page-body"><h2 id="969c9a08-be6b-49c2-8592-b58076e9b0d5" class="">Scenario</h2><blockquote id="0897f4cc-9b10-4436-a18a-61e933702a0d" class="">You have been sent a phishing link - It is your task to investigate this website and find out everything you can about the site, the actor responsible, and perform threat intelligence work on the operator(s) of the phishing site. </blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fbd8972b-9e5b-4426-9d62-962e890c6880"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Warning: The website and kit you see is the lab is REAL. Exercise caution when interacting with the malicious website and do not enter any sensitive information</div></figure><h2 id="8bdb9234-725b-4353-a7aa-d8bc7d28521f" class="">Questions</h2><blockquote id="90e461a0-2eae-4d8e-8284-eb639c87b59d" class="">1. The HTML page used on securedocument.net is a decoy. Where was this webpage mirrored from, and what tool was used? (Use the first part of the tool name only)<em>(4 points)</em></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ce8f8d0a-345c-48f1-8f0f-544b4f85fa70"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Answer</strong>: <code>61.221.12.26/cgi-sys/defaultwebpage.cgi, HTTrack</code></div></figure><p id="f098b103-1f8d-4d76-8f79-cdeaad924dde" class="">To figure this part out, we navigated to securedocument.net/secure. This part was a little confusing for me and I had to use a write-up because I wasn’t sure how to get here, if I had access to DirBuster, it would’ve been the first tool I would’ve used in order to bruteforce and find directories.</p><figure id="98791b41-091a-4570-8582-0c3f60c5edd9" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_4.55.57_PM.png"><img style="width:1104px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_4.55.57_PM.png"/></a></figure><p id="e4a472c1-8710-40bb-9df3-7678cf133947" class="">We can see that from here, the Parent Directory is available, the Phishing kit is also here, <code>0ff1cePh1sh.zip</code>, we will be using this later.</p><p id="3262159b-7223-4179-89c6-3888f43bb4e7" class="">Clicking on Parent Directory redirected us to <code>http://securedocument.net/cgi-sys/</code></p><p id="0e680eb1-edc8-4d42-9992-af086c133fc0" class="">We viewed the page source and found where this webpage was mirrored from as well as what tool was used.</p><figure id="6bae2a1e-a253-4633-b0ce-b45eb9178b1a" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.01.45_PM.png"><img style="width:875px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.01.45_PM.png"/></a></figure><p id="63f23225-5ac8-4c1a-af94-aa441100c7e0" class="">Here we can see it is mirrored from <code>61.221.12.26/cgi-sys/defaultwebpage.cgi</code></p><p id="431a8dd9-bfcc-4c6b-bab0-ca6f0903e522" class="">The tool used is <code>HTTrack Website Copier</code></p><blockquote id="5ce70c50-a2fd-411d-ba8d-3b550cfe3117" class="">2. What is the full URL of the background image which is on the phishing landing page?<em>(3 points)</em></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="10e99f2e-f806-4a8f-b692-75c44c9cb254"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Answer: </strong><code><a href="http://securedocument.net/secure/L0GIN/protected/login/portal/axCBhIt.png">http://Securedocument.net/secure/L0GIN/protected/login/portal/axCBhIt.png</a></code></div></figure><figure id="17654305-212c-4d2a-98d7-6fede5584821"><div class="source"><a href="https://www.notion.soundefined"></a></div></figure><p id="07c9e071-8fdc-47b8-a437-18ad59ffdaa3" class="">To find the URL of the background image, all we have to do is right click the image itself, behind the login form and inspect element, from there navigate to “Style Editor”, I first thought we could find the URL by just using inspect element on the image itself, but that didn’t work, I looked around the page source and the image couldn’t be found anywhere. My next step was to check CSS. From there, we found the styling sheet <code>style.css</code> , the first rule we can see is the body rule.</p><figure id="d4a1cbd8-3570-4e64-8dd9-b08b8ab7604d" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.12.02_PM.png"><img style="width:775px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.12.02_PM.png"/></a></figure><p id="f3ff7479-32b9-47b2-acda-1b4370ff6548" class="">From this rule, we can see what url is used for the background, <code>axCBhIt.png</code></p><p id="ed13ed92-9caf-45dc-b1e3-55a19f08ce52" class="">If we add this to the URL, <code>http://securedocument.net/secure/L0GIN/protected/login/portal/axCBhIt.png</code></p><p id="400a9e49-daca-47ed-8f5a-5081db5b7371" class="">We are redirected to the image itself, I first got the answer wrong because I didn’t realize the 0 in <code>L0GIN</code>, so don’t make the same mistake I did!</p><p id="983b1433-b4d7-4948-8dc3-36648fa3c1fd" class="">
+</p><blockquote id="4d1c737e-6d44-4c6d-84cc-61e47cabc131" class="">3. What is the name of the php page which will process the stolen credentials?<em>(3 points)</em></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ddbfca9d-ebdc-4d25-a29f-6e77fba7191d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Answer: </strong><code><strong>jeff.php</strong></code></div></figure><p id="36d3e4bc-134c-45bd-a420-36f64227890f" class="">The way we figure this out is by looking at the page source again, we can see that the login form has a form action, </p><figure id="099b051b-c775-47d5-8890-47d7218b6368" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.19.25_PM.png"><img style="width:658px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.19.25_PM.png"/></a></figure><p id="7523257d-7ab1-4410-8ade-70917a36b52e" class="">We can see it here, <code>&lt;form action=”jeff.php” method=”post”&gt;</code></p><p id="0c28b3e4-e5be-4b4a-a6eb-051b4fe1f98f" class="">This uses a HTTP POST request method. </p><blockquote id="74548fbf-4ce6-48b8-ab23-a451d07fa08f" class="">The HTTP POST method requests the web server accept the data enclosed in the body of the POST message. HTTP POST method is often used when submitting login or contact forms or uploading files and images to the server.</blockquote><p id="95d093ae-dc6c-44ba-aebb-6fa556ab9b15" class="">When the victim clicks the download button, the POST method will be used, this also executes the form action, jeff.php, which will process the credentials entered in the login form.</p><figure id="2e2bc30c-da85-42fb-8ae4-b0e4e20bd997" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.25.44_PM.png"><img style="width:760px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.25.44_PM.png"/></a></figure><p id="2c1146e6-759e-44bd-b505-5d66fedbf58c" class="">This is the PHP script, Jeff.php</p><blockquote id="10e832fc-f91d-41db-a04a-7d4768e4e5b0" class="">4. What is the SHA256 of the phishing kit in ZIP format? (Provide the last 6 characters)<em>(3 points)</em></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f0395c80-e583-4451-8228-96c4f5c5388c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Answer: </strong><code>fa5b48F</code></div></figure><p id="0c570bdd-e800-4dd5-a6eb-c6cf664d32d9" class="">For this question we will be using the file we found earlier, <code>0ff1cePh1sh.zip</code></p><p id="1a53c0e1-967d-4294-a972-df5dd1fb26de" class="">To get the SHA256 hash of the phishing kit we will be using the sha256sum linux command, </p><p id="5cc38931-d658-4ccf-9877-dd066ff7a37a" class="">sha256sum:</p><blockquote id="65422595-cddc-44d2-a3fc-21b363201267" class="">Print or check SHA256 (256-bit) checksums. With no FILE, or when FILE is -, read standard input.</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0b733b9d-2b33-49de-8742-b0dd898bd352"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><a href="https://linux.die.net/man/1/sha256sum">https://linux.die.net/man/1/sha256sum</a></div></figure><p id="c7f5dc09-8e4c-451c-8384-f4f70b5d55c7" class="">To use this command, launch the terminal, and cd (Change Directory) to the directory where you downloaded the Phishing kit. </p><p id="283aab88-c996-4f13-9cf1-e87d68c2b364" class="">In my case, the default downloads folder is <code>/home/ubuntu/Downloads</code></p><p id="a8c295ea-45dd-4fc0-9174-1288cedc00a5" class="">Enter these two commands in to the terminal, one by one.</p><blockquote id="e35558f1-2a36-4f80-8cb9-19d708dfb542" class="">cd /home/ubuntu/Downloads</blockquote><blockquote id="f12bd215-cc1d-4ae4-8db2-fe0c39049bde" class="">sha256sum 0ff1cePh1sh.zip</blockquote><p id="352138ca-5ed8-47d7-a158-f6d65a908f19" class="">The terminal responds with the SHA256 hash of the zip file.</p><figure id="01cd7e00-9cca-4a79-93af-78139c8e6857" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.39.41_PM.png"><img style="width:651px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.39.41_PM.png"/></a></figure><p id="94987c4f-8be8-4eac-85ce-0e707e37f0a2" class="">An alternative to using cd to navigate directories is going to the directory yourself using the file manager and right clicking the directory and clicking <code>“Open Terminal Here”</code></p><figure id="5522b33d-d875-4025-b8d3-ff20ed244101" class="image"><a href="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.36.11_PM.png"><img style="width:740px" src="Phishy%20V1%20%2098791/Screen_Shot_2022-03-07_at_5.36.11_PM.png"/></a></figure><p id="d4ac5894-66a6-40a8-b6f8-57b65be27816" class="">
+</p></div></article></body></html>
