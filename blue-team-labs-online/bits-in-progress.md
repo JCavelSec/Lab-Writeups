@@ -2,7 +2,7 @@
 description: https://blueteamlabs.online/home/investigation/33
 ---
 
-# BITS
+# BITS (IN PROGRESS)
 
 ## Scenario
 
@@ -65,3 +65,38 @@ _💡_Answer: **2022-01-07T13:32:19Z**
 To get this answer, we are still using the previous text file `output.txt` scroll down below and you will find the `"CreationTime": "2022-01-07T13:32:19Z"`field which gives us our answer.
 
 ![](<../.gitbook/assets/Screen Shot 2022-03-08 at 10.38.01 PM.png>)
+
+{% hint style="info" %}
+Question 3) BITS can be used to download files from other systems. What is the IP address that originally hosted the file downloaded to the victim machine? (Format: X.X.X.X)_(3 points)_
+
+_💡_Answer:  **10.0.12.228**
+{% endhint %}
+
+To solve this question, the same output.txt file was used, the IP address that originally hosted the file downloaded to the victim machine can be found by looking at the `"SourceURL"` field, this field identifies the source the file **winPEAS.bat** was requested from, the source being **"10.0.12.228"**
+
+![](<../.gitbook/assets/Screen Shot 2022-03-11 at 8.31.12 PM.png>)
+
+{% hint style="info" %}
+Question 4) What is the folder and filename used when this file was downloaded to the victim machine? (Format: \\\folder\\\file.extension)_(3 points)_
+
+_💡_Answer: **\\\Music\\\winPEAS.bat**
+{% endhint %}
+
+Using the same output.txt file, this question is fairly easy and can be found by looking at the `"DestFile"` field above the `"SourceURL"` field from the previous question.
+
+{% hint style="info" %}
+Question 5) Is there any evidence of other files that include the string "winPEAS"? What is the original filename? Make sure the DownloadByteSize or TransferByteSize is greater than 0 to identify a successful download/transfer. (Format: filename.extension)_(4 points)_
+
+_💡_Answer: **winPEASx64.exe**
+{% endhint %}
+
+To solve this question, since it's asking for evidence of other files that contain the string "winPEAS", all i did was use the search function to look for instances of "winPEAS" in the output.txt file.
+
+{% hint style="info" %}
+Question 6) What is the folder and filename used when this second file was downloaded to the victim machine? (Format: \\\folder\\\file.extension)_(3 points)_
+
+Answer: **\\\Music\\\WindowsUpdater.exe**
+{% endhint %}
+
+To solve this question, we used to same step as question number four.
+
