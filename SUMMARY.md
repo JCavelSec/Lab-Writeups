@@ -11,7 +11,11 @@
 
 ## TCM Security Notes
 
-* [Page 1](tcm-security-notes/page-1.md)
+* [TCM Security Notes](tcm-security-notes/tcm-security-notes/README.md)
+  * [The OSI Model](tcm-security-notes/tcm-security-notes/the-osi-model.md)
+  * [Scripting with Bash](tcm-security-notes/tcm-security-notes/scripting-with-bash.md)
+  * [Users and Privileges](tcm-security-notes/tcm-security-notes/users-and-privileges.md)
 * [TCP, UDP, and the Three way Handshake](tcm-security-notes/tcp-udp-and-the-three-way-handshake.md)
 * [IP Addresses](tcm-security-notes/ip-addresses.md)
 * [Installing and Updating Tools](tcm-security-notes/installing-and-updating-tools.md)
+* [Page 1](tcm-security-notes/page-1.md)
