@@ -1,27 +1,5 @@
 # The OSI Model
 
-Pneumonic **P**hysical (Data cables, Cat6 for example)&#x20;
+Pneumonic **P**hysical (Data cables, Cat6 for example) **D**ata Link (MAC Addresses, Switching, **N**etwork (IP Addresses, Routing) **T**ransport (TCP, UDP) **S**ession (session management) **P**resentation (WMV, JPEG, MOV, Media) **A**pplication (HTTP, SMTP, FTP)
 
-**D**ata Link (MAC Addresses, Switching,&#x20;
-
-**N**etwork (IP Addresses, Routing)&#x20;
-
-**T**ransport (TCP, UDP)&#x20;
-
-**S**ession (session management)&#x20;
-
-**P**resentation (WMV, JPEG, MOV, Media)&#x20;
-
-**A**pplication (HTTP, SMTP, FTP)
-
-Please do not throw sausage pizza away&#x20;
-
-When we say, my home router is a layer 2,3&#x20;
-
-It does both routing and switching&#x20;
-
-When we receive data, it goes from layer 1 to 7
-
-When we transmit data, it goes from layer 7 to 1&#x20;
-
-When we're troubleshooting, always start with the physical and go down
+Please do not throw sausage pizza away When we say, my home router is a layer 2,3 It does both routing and switching When we receive data, it goes from layer 1 to 7 When we transmit data, it goes from layer 7 to 1 When we're troubleshooting, always start with the physical and go down
