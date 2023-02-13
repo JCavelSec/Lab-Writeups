@@ -21,3 +21,9 @@
   * [Common Network Commands](tcm-security-notes/tcm-security-notes/common-network-commands.md)
   * [Installing and Updating Tools](tcm-security-notes/tcm-security-notes/installing-and-updating-tools.md)
   * [IP Addresses](tcm-security-notes/tcm-security-notes/ip-addresses.md)
+
+## eJPT
+
+* [eJPT Notes](ejpt/ejpt-notes/README.md)
+  * [Information Gathering\*\*](ejpt/ejpt-notes/information-gathering.md)
+  * [Footprinting](ejpt/ejpt-notes/footprinting.md)
