@@ -15,13 +15,12 @@ What type of information gathering involves gathering as much information as pos
 What type of information gathering involves gathering as much information as possible by actively engaging with the target system?
 
 * Active Information Gathering
-*
 
 What involves utilizing publicly available information or resources to learn more about a website etc?
 
 * Passive information gathering
 
-Passive Information Gathering
+**Passive Information Gathering**
 
 * Identifiyng IP Addresses and DNS information
 * Identifying domain names and domain ownership information
@@ -29,7 +28,7 @@ Passive Information Gathering
 * Identifying web technologies being used on target sites
 * Identifying subdomains
 
-Active Information Gathering
+**Active Information Gathering**
 
 * Discovering open ports or target systems
 * Learning about the internal infrastructure of a target network/organization
