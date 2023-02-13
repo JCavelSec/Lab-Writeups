@@ -14,7 +14,7 @@
 
 To figure this part out, we navigated to securedocument.net/secure. This part was a little confusing for me and I had to use a write-up because I wasn’t sure how to get here, if I had access to DirBuster, it would’ve been the first tool I would’ve used in order to bruteforce and find directories.
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_4.55 (2).57\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_4.55 (1) (1).57\_PM>)
 
 
 
@@ -24,7 +24,7 @@ Clicking on Parent Directory redirected us to `http://securedocument.net/cgi-sys
 
 We viewed the page source and found where this webpage was mirrored from as well as what tool was used.
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.01.45\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.01 (1).45\_PM>)
 
 
 
@@ -38,7 +38,7 @@ The tool used is `HTTrack Website Copier`
 
 To find the URL of the background image, all we have to do is right click the image itself, behind the login form and inspect element, from there navigate to “Style Editor”, I first thought we could find the URL by just using inspect element on the image itself, but that didn’t work, I looked around the page source and the image couldn’t be found anywhere. My next step was to check CSS. From there, we found the styling sheet `style.css` , the first rule we can see is the body rule.
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.12 (1).02\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.12 (2).02\_PM>)
 
 
 
@@ -54,7 +54,7 @@ We are redirected to the image itself, I first got the answer wrong because I di
 
 The way we figure this out is by looking at the page source again, we can see that the login form has a form action,
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.19 (1).25\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.19 (2).25\_PM>)
 
 
 
@@ -66,7 +66,7 @@ This uses a HTTP POST request method.
 
 When the victim clicks the download button, the POST method will be used, this also executes the form action, jeff.php, which will process the credentials entered in the login form.
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (2).44\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (1).44\_PM>)
 
 This is the PHP script, Jeff.php
 
@@ -96,11 +96,11 @@ Enter these two commands in to the terminal, one by one.
 
 The terminal responds with the SHA256 hash of the zip file.
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.39 (1).41\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.39 (2).41\_PM>)
 
 An alternative to using cd to navigate directories is going to the directory yourself using the file manager and right clicking the directory and clicking `“Open Terminal Here”`
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.36.11\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.36 (1) (1).11\_PM>)
 
 > 5\. What email address is setup to receive the phishing credential logs?_(3 points)_
 >
@@ -108,7 +108,7 @@ An alternative to using cd to navigate directories is going to the directory you
 >
 > This can be found by looking at the PHP script from earlier (jeff.php).&#x20;
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (1).44\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (2).44\_PM>)
 
 Here we can see the recipient, this script has this email setup to receive the phishing credential logs. You can find it under "recipient".
 
@@ -124,7 +124,7 @@ Open the `index.html` file, you will notice a javascript function `(getTime)` is
 >
 > 💡**Answer:** `Office.com`
 
-![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (1).44\_PM>)
+![](<../.gitbook/assets/Screen\_Shot\_2022 03 07\_at\_5.25 (2).44\_PM>)
 
 Here we can see that the script that runs after the login form is submitted is at the end of the script, `https://www.office.com` will be the result.
 
