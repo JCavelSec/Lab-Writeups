@@ -6,7 +6,7 @@
 
 ***
 
-* [Blue Team Labs Online](<README (1).md>)
+* [Blue Team Labs Online](README.md)
   * [Remote Desktop Protocol (RDP)](blue-team-labs-online/remote-desktop-protocol-rdp.md)
   * [📝 Phishy V1 BTLO](blue-team-labs-online/phishy-v1-btlo.md)
   * [BITS (IN PROGRESS)](blue-team-labs-online/bits-in-progress.md)
