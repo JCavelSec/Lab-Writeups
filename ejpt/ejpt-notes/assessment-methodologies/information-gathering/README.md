@@ -6,4 +6,4 @@ Information gathering is the first step of any penetration test and is arguably 
 
 ### Course Instructor: Alexis Ahmed
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Introduction To Information Gathering</td><td></td><td></td></tr><tr><td></td><td>Passive and Active Information Gathering</td><td></td><td><a href="../../information-gathering.md#passive-information-gathering">#passive-information-gathering</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Introduction To Information Gathering</td><td></td><td><a href="../../information-gathering.md">information-gathering.md</a></td></tr><tr><td></td><td>Passive and Active Information Gathering</td><td></td><td><a href="../../information-gathering.md#passive-information-gathering">#passive-information-gathering</a></td></tr></tbody></table>
