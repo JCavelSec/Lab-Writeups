@@ -15,7 +15,6 @@
 
 * [eJPT Notes](ejpt/ejpt-notes/README.md)
   * [Information Gathering](ejpt/ejpt-notes/information-gathering.md)
-  * [Footprinting](ejpt/ejpt-notes/footprinting.md)
 
 ## TCM Security Notes
 
