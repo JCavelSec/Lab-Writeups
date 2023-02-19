@@ -1,6 +1,8 @@
 # Website Recon and Footprinting
 
-## Footprinting
+## Passive Information Gathering
+
+### Footprinting
 
 **Target: Hackersploit.org**
 
@@ -58,7 +60,7 @@ https://hackersploit.org/category-sitemap.xml	2022-12-28 12:26 +00:00
 https://hackersploit.org/author-sitemap.xml	2021-01-27 19:55 +00:00
 ```
 
-## **Helpful Addons**&#x20;
+### **Helpful Addons**&#x20;
 
 **Builtwith** - Web technology profiler tool that allows users to identify what technologies a website is using&#x20;
 
@@ -68,7 +70,7 @@ https://hackersploit.org/author-sitemap.xml	2021-01-27 19:55 +00:00
 
 **HTTRack**- This can be used to download a mirror of a website so you can analyze the source code to learn more about the site, ex: find vulnerabilities, get an understanding of the website structure etc
 
-## Whois Enumeration
+### Whois Enumeration
 
 **whois** A query and response protocol that is widely used for querying databases that store the registered users or assignees of an internet resource, such as:
 
@@ -137,7 +139,7 @@ URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
 >>> Last update of WHOIS database: 2023-02-14T01:42:33Z <<<
 ```
 
-## Website Footprinting With Netcraft
+### Website Footprinting With Netcraft
 
 Netcraft can be used to enumerate information **passively** from a website. Netcraft correlates information such as:
 
@@ -216,6 +218,38 @@ URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
 
 As you can see in this WHOIS query, since DNSSEC is not being used in this webserver, information such as the Registration Organization, State/Province, Country, is not redacted.
 
+### DNS Recon
+
+DNS Recon falls under passive information gathering, this is because we are not actively engaging any targets (DNS Servers), we are just gathering information from public sources.
+
+We will be looking for information that will provide us with a better understanding as to how the target website or system is configured to run
+
+**DNSRecon** DNSRecon is a Python script that provides the ability to perform: Check all NS Records for Zone Transfers. Enumerate General DNS Records for a given Domain (MX, SOA, NS, A, AAAA, SPF and TXT). Perform common SRV Record Enumeration. Top Level Domain (TLD) Expansion.
+
+MX: Mail server address NS: Nameserver A: IPv4 Addresses AAAA: IPv6 Addresses TXT: A DNS Record in text format which contains information about a given domain
+
+* TXT Records also have information that helps external network servers and services handle outgoing email from your domain. SPF (Server Policy Framework): A type of DNS TXT record commonly used for email authentication. This lists all the servers authorized to send emails from a particular domain
+* Without SPF records, or other authentication records, an attacker can easily impersonate a sender and trick the recipient into taking action or sharing information they otherwise would not.
+  * SPF records were created because the standard protocol for email (SMTP) does not inherently authenticate the "from" address in an email
+
+**DNSRECON command**
+
+```
+dnsrecon -d hackersploit.org
+```
+
+`-d` indicates we're providing a domain, in this case "hackersploit.org"&#x20;
+
+<figure><img src="../../.gitbook/assets/dnsrecon (1).png" alt=""><figcaption></figcaption></figure>
+
+In the screenshot above we can see that the Mail server is displayed, this indicates CloudFlare doesn't hide proxy mail server addresses very well. MX: MX \_dc-mx.2c2a3526b376.hackersploit.org 198.54.120.212
+
+```┌──(kali㉿kali)-[~]
+└─$ dnsrecon -d zonetransfer.me 
+```
+
+**DNSDumpster** A FREE domain research tool that can discover hosts related to a domain. Finding visible hosts from the attackers perspective is an important part of the security assessment process. Very similar to DNSRecon, but it has the advantage that the information displayed is organized fantasticly.
+
 **What is DNSDumpster**\
 A web-based tool used for gathering information about a target domain, including
 
@@ -226,7 +260,7 @@ A web-based tool used for gathering information about a target domain, including
 
 What is DNS Dumpster Commonly used for?
 
-* Reconnoisance
+* Reconnaissance
 * Security Auditing
 * Troubleshooting DNS Configurations
 
@@ -234,7 +268,8 @@ In addition, DNSDumpster provides a graphical user interface, and allows users t
 
 * It is important to use DNSDumpster ethically and responsibly
 
-**WAF with wafw00f**\
+### **WAF with wafw00f**
+
 _WAF stands for Web Application Firewall_
 
 **wafw00f**\
@@ -247,7 +282,7 @@ WafW00f is often used to test the effectiveness of WAFs and identify potential v
 
 <figure><img src="../../.gitbook/assets/e691ad3b0c584e5f87e6446d455846ab (1).png" alt=""><figcaption></figcaption></figure>
 
-**Subdomain Enumeration With Sublist3r**
+### **Subdomain Enumeration With Sublist3r**
 
 **What is Sublist3r?**\
 Sublist3r is a python-based open source tool used for subdomain enumeration. It works by querying multiple search engines, including Google, Yahoo, and Bing, as well as other sources such as certificate transparency logs, to generate a list of subdomains associated with a target domain
@@ -256,7 +291,8 @@ Sublist3r is commonly used to identify potential attack vectors, such as unsecur
 
 <figure><img src="../../.gitbook/assets/c3e2365b62984ae183c2de8e2bf93a4a.png" alt=""><figcaption></figcaption></figure>
 
-**Google Dorking**\
+### **Google Dorking**
+
 Google Dorking, also known as Google hacking or Google-fu, is the practice of using advanced Google search techniques to locate sensitive or confidential information that is not easily accessible through simple searches.
 
 **Examples**\
@@ -294,7 +330,8 @@ ExploitDB Google Hacking Database
 
 * A database of google dorks that have found useful info such as users, passwords, etc.
 
-Email Harvesting with theHarvester\
+### Email Harvesting with theHarvester
+
 TheHarvester, a tool similar to Sublist3r, uses OSINT tools to find emails that belong to a domain that may be publicly available or found by crawling a leaked database.
 
 ```
@@ -317,26 +354,28 @@ TheHarvester, a tool similar to Sublist3r, uses OSINT tools to find emails that 
 [*] Target: proton.me 
 ```
 
-**Leaked Password Databases**
+## **Leaked Password Databases**
 
-* HaveIBeenPwned
+### [HaveIBeenPwned](https://haveibeenpwned.com)
 
-***
+## Active Information Gathering
 
-**DNS Zone Transfers**\
+### **DNS Zone Transfers**
+
 DNS or Domain Name System, is used to translate human-readable domain names into IP Addresses that are used by computers to identify and communicate with each other over the internet.
 
 **How does DNS work?**\
 DNS works by maintaing a distributed database of domai names and their corresponding IP Addresses. When a user types in a domain name in their web browser, the browser sends a DNS query to a DNS server, which then looks up the corresponding IP Address and returns it to the browser.
 
-How do DNS Zone Transfers work?\
-DNS Zone Transfers are a mechanism used to replicate DNS databases between primary and secondary DNS servers. When a primary DNS server is updated with new DNS resource records, it notifies secondary DNS servers that are configured to replicate the zone. The secondary DNS servers then request a copy of the updated DNS database from the primary DNS server using a zone transfer.
+**How do DNS Zone Transfers work?**\
+****DNS Zone Transfers are a mechanism used to replicate DNS databases between primary and secondary DNS servers. When a primary DNS server is updated with new DNS resource records, it notifies secondary DNS servers that are configured to replicate the zone. The secondary DNS servers then request a copy of the updated DNS database from the primary DNS server using a zone transfer.
 
-DNS Records
+### **DNS Records**
 
 <figure><img src="https://i.imgur.com/WXzgZZi.png" alt=""><figcaption></figcaption></figure>
 
-**DNS Interrogation**\
+### **DNS Interrogation**
+
 DNS Interrogation is the process of enumerating DNS Records for a specific domain. It can be used to diagnose and troubleshoot DNS-related issues, such as identifying the cause of DNS resolution failures or misconfigured DNS records.
 
 It can also be used to perform reconnaissance and obtain information about a target network or domain. Therefore, it is important to ensure that proper security measures are in place to protect against unauthorized DNS interrogation or exploitation.
@@ -345,15 +384,17 @@ DNSDumpster Result: zonetransfer.me
 
 <figure><img src="https://i.imgur.com/lCwIzFj.png" alt=""><figcaption></figcaption></figure>
 
-DNSDumpster Result: zonetransfer.me
+**DNSDumpster** Result: zonetransfer.me
 
 <figure><img src="https://i.imgur.com/106OfTc.png" alt=""><figcaption></figcaption></figure>
 
-DNSEnum
+**DNSEnum**
 
 <figure><img src="https://i.imgur.com/XsM6ZQT.png" alt=""><figcaption></figcaption></figure>
 
-**Host Discovery with NMap**
+## Nmap Demo
+
+### **Host Discovery with NMap**
 
 Finding your Home network IP and subnet.
 
@@ -427,9 +468,9 @@ Netdiscover can be useful for network administrators who want to identify all th
 * Uses ARP (Address Resolution Protocol) to discover live hosts on a network.
 * Does not provide detailed information about the services running on hosts.
 
-Nmap Lab\
-\
-Here we ran `ip a` to find the IP Address of the Kali Machine we are using to perform Nmap scans.
+**Nmap Lab**\
+****\
+****Here we ran `ip a` to find the IP Address of the Kali Machine we are using to perform Nmap scans.
 
 <figure><img src="https://i.imgur.com/LQuuVfC.png" alt=""><figcaption></figcaption></figure>
 
@@ -437,6 +478,8 @@ We then used the ping command to determine if our target host is up or not.\
 
 
 <figure><img src="https://i.imgur.com/3U175sQ.png" alt=""><figcaption></figcaption></figure>
+
+### Nmap Port Scan
 
 We then ran our first nmap scan against our target `10.4.16.154` which determined that the target was blocking ping probes, which indicated we needed to use `-Pn` , this switch tells Nmap to do no ping, which skips the host discovery stage altogether.
 
