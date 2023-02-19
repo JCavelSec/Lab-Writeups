@@ -15,8 +15,8 @@
 
 * [eJPT Notes](ejpt/ejpt-notes/README.md)
   * [Information Gathering](ejpt/ejpt-notes/information-gathering.md)
+  * [Website Recon and Footprinting](ejpt/ejpt-notes/website-recon-and-footprinting.md)
   * [Website Foot-printing With Netcraft](ejpt/ejpt-notes/website-foot-printing-with-netcraft.md)
-  * [Footprinting](ejpt/ejpt-notes/footprinting.md)
 
 ## TCM Security Notes
 

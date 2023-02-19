@@ -1,4 +1,6 @@
-# Footprinting
+# Website Recon and Footprinting
+
+## Footprinting
 
 **Target: Hackersploit.org**
 
@@ -56,8 +58,15 @@ https://hackersploit.org/category-sitemap.xml	2022-12-28 12:26 +00:00
 https://hackersploit.org/author-sitemap.xml	2021-01-27 19:55 +00:00
 ```
 
-HTTrack\
-This can be used to download a mirror of a website so you can analyze the source code to learn more about the site, ex: find vulnerabilities, get an understanding of the website structure etc.
+## **Helpful Addons**&#x20;
+
+**Builtwith** - Web technology profiler tool that allows users to identify what technologies a website is using&#x20;
+
+**Wappalyzer** - A web browser extension and open-source software that uncovers the technologies used on websites. It can detect content management systems, web frameworks, e-commerce platforms, JavaScript libraries, analytics tools, and many other technologies.&#x20;
+
+**Whatweb** - A command-line tool used for website reconnaissance and information gathering. It can be used to detect what technologies a website is using, such as web servers, programming languages, and content management systems.&#x20;
+
+**HTTRack**- This can be used to download a mirror of a website so you can analyze the source code to learn more about the site, ex: find vulnerabilities, get an understanding of the website structure etc
 
 **What is DNSDumpster**\
 A web-based tool used for gathering information about a target domain, including
@@ -88,7 +97,7 @@ It works by analyzing HTTP responses from a web application and searching for pa
 
 WafW00f is often used to test the effectiveness of WAFs and identify potential vulnerabilities in web applications.
 
-<figure><img src="../../../.gitbook/assets/e691ad3b0c584e5f87e6446d455846ab (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/e691ad3b0c584e5f87e6446d455846ab (1).png" alt=""><figcaption></figcaption></figure>
 
 **Subdomain Enumeration With Sublist3r**
 
@@ -97,7 +106,7 @@ Sublist3r is a python-based open source tool used for subdomain enumeration. It 
 
 Sublist3r is commonly used to identify potential attack vectors, such as unsecured subdomains, misconfigured DNS records, and other security vulnerabilities. This tool should be used ethically and responsibly, as subdomain enumeration can be used for malicious purposes.
 
-<figure><img src="../../../.gitbook/assets/c3e2365b62984ae183c2de8e2bf93a4a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/c3e2365b62984ae183c2de8e2bf93a4a.png" alt=""><figcaption></figcaption></figure>
 
 **Google Dorking**\
 Google Dorking, also known as Google hacking or Google-fu, is the practice of using advanced Google search techniques to locate sensitive or confidential information that is not easily accessible through simple searches.
