@@ -6,13 +6,13 @@ Information gathering is the first step of any penetration test and is arguably 
 
 ### Course Instructor: [Alexis Ahmed](https://alexisahmed.com/)
 
-### [LinkedIn](https://linkedin.com/in/alexisahmed)
+#### [LinkedIn](https://linkedin.com/in/alexisahmed)
 
-### [YouTube](https://youtube.com/hackersploit)
+#### [YouTube](https://youtube.com/hackersploit)
 
-### [Twitter](https://twitter.com/hackersploit)
+#### [Twitter](https://twitter.com/hackersploit)
 
-### [GitHub](https://github.com/alexisahmed)
+#### [GitHub](https://github.com/alexisahmed)
 
 
 
