@@ -182,7 +182,7 @@ Issuer common name Cloudflare Inc ECC CA-3
 
 **Certificate Transparency**&#x20;
 
-<figure><img src="../../../../.gitbook/assets/693364324c9247af824d4a39472c6f58.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/693364324c9247af824d4a39472c6f58.png" alt=""><figcaption></figcaption></figure>
 
 **Sender Policy Framework** A host's Sender Policy Framework (SPF) describes who can send mail on its behalf. This is done by publishing an SPF record containing a series of rules. Each rule consists of a qualifier followed by a specification of which domains to apply this qualifier to.
 
@@ -240,7 +240,7 @@ dnsrecon -d hackersploit.org
 
 `-d` indicates we're providing a domain, in this case "hackersploit.org"&#x20;
 
-<figure><img src="../../../../.gitbook/assets/dnsrecon (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dnsrecon (1).png" alt=""><figcaption></figcaption></figure>
 
 In the screenshot above we can see that the Mail server is displayed, this indicates CloudFlare doesn't hide proxy mail server addresses very well. MX: MX \_dc-mx.2c2a3526b376.hackersploit.org 198.54.120.212
 
@@ -280,7 +280,7 @@ It works by analyzing HTTP responses from a web application and searching for pa
 
 WafW00f is often used to test the effectiveness of WAFs and identify potential vulnerabilities in web applications.
 
-<figure><img src="../../../../.gitbook/assets/e691ad3b0c584e5f87e6446d455846ab (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/e691ad3b0c584e5f87e6446d455846ab (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Subdomain Enumeration With Sublist3r**
 
@@ -289,7 +289,7 @@ Sublist3r is a python-based open source tool used for subdomain enumeration. It 
 
 Sublist3r is commonly used to identify potential attack vectors, such as unsecured subdomains, misconfigured DNS records, and other security vulnerabilities. This tool should be used ethically and responsibly, as subdomain enumeration can be used for malicious purposes.
 
-<figure><img src="../../../../.gitbook/assets/c3e2365b62984ae183c2de8e2bf93a4a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/c3e2365b62984ae183c2de8e2bf93a4a.png" alt=""><figcaption></figcaption></figure>
 
 ### **Google Dorking**
 
