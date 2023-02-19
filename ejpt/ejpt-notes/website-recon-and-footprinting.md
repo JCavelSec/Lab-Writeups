@@ -68,6 +68,154 @@ https://hackersploit.org/author-sitemap.xml	2021-01-27 19:55 +00:00
 
 **HTTRack**- This can be used to download a mirror of a website so you can analyze the source code to learn more about the site, ex: find vulnerabilities, get an understanding of the website structure etc
 
+## Whois Enumeration
+
+**whois** A query and response protocol that is widely used for querying databases that store the registered users or assignees of an internet resource, such as:
+
+* Domain Name
+* IP Address Block
+* Autonomous System
+
+```
+┌──(kali㉿kali)-[~]
+└─$ whois hackersploit.org
+Domain Name: hackersploit.org
+Registry Domain ID: 77f8fe62a425487cbefef4bf7e27d2ec-LROR
+Registrar WHOIS Server: whois.namecheap.com
+Registrar URL: http://www.namecheap.com
+Updated Date: 2022-12-22T11:20:08Z
+Creation Date: 2018-04-05T11:27:07Z
+Registry Expiry Date: 2024-04-05T11:27:07Z
+Registrar: NameCheap, Inc.
+Registrar IANA ID: 1068
+Registrar Abuse Contact Email: abuse@namecheap.com
+Registrar Abuse Contact Phone: +1.6613102107
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Privacy service provided by Withheld for Privacy ehf
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Capital Region
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: IS
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: dee.ns.cloudflare.com
+Name Server: jim.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2023-02-14T01:42:33Z <<<
+```
+
+## Website Footprinting With Netcraft
+
+Netcraft can be used to enumerate information **passively** from a website. Netcraft correlates information such as:
+
+* WHOIS
+* SSL or TLS certs
+* Web Technologies being used
+* Name servers
+
+This saves you time from doing manual work, as Netcraft provides a lot of information that would otherwise take more time to gather if done manually.
+
+Using results from our internet data mining, find out the technologies and infrastructure of any site. Explore hostnames visited by users of the Netcraft extensions. Search by domain or keyword.
+
+**Important results given by Netcraft**&#x20;
+
+Validity Period (Certificate)&#x20;
+
+Certificate Issuer/Country&#x20;
+
+Certificate Transparency&#x20;
+
+Country: US&#x20;
+
+Organizational unit: Not Present&#x20;
+
+Subject Alternative Name: sni.cloudflaressl.com, hackersploit.org, \*.hackersploit.org&#x20;
+
+Validity period: From May 11 2022 to May 10 2023 (11 months, 4 weeks, 2 days)&#x20;
+
+SSLv3/POODLE or Heartbleed Vulnerable? No, not according to Netcraft
+
+**Web trackers**&#x20;
+
+This tells you what web analytics/trackers are enabled on the site
+
+**Site technologies Profiler**
+
+Issuing organisation Cloudflare, Inc.&#x20;
+
+Issuer common name Cloudflare Inc ECC CA-3
+
+**Certificate Transparency**&#x20;
+
+<figure><img src="../../.gitbook/assets/693364324c9247af824d4a39472c6f58.png" alt=""><figcaption></figcaption></figure>
+
+**Sender Policy Framework** A host's Sender Policy Framework (SPF) describes who can send mail on its behalf. This is done by publishing an SPF record containing a series of rules. Each rule consists of a qualifier followed by a specification of which domains to apply this qualifier to.
+
+DNSSEC: This ensures personal data such as the owners name, address etc, is all redacted from the WHOIS query. Domain registered through namecheap Confirmed with registrar URL Creation date: 2018-04-05T11:27:07Z Renewed: 2022-12-22 Domain Expiration: 2024-04-05T11:27:07Z
+
+```
+`┌──(kali㉿kali)-[~]
+└─$ whois zonetransfer.me
+Domain Name: ZONETRANSFER.ME
+Registry Domain ID: D108500000003513097-AGRS
+Registrar WHOIS Server:
+Registrar URL: http://www.meshdigital.com
+Updated Date: 2022-01-05T10:14:50Z
+Creation Date: 2011-12-27T15:34:08Z
+Registry Expiry Date: 2023-12-27T15:34:08Z
+Registrar Registration Expiration Date:
+Registrar: Mesh Digital Limited
+Registrar IANA ID: 1390
+Registrar Abuse Contact Email:
+Registrar Abuse Contact Phone:
+Reseller:
+Domain Status: ok https://icann.org/epp#ok
+Registrant Organization: DigiNinja
+Registrant State/Province: Routerville
+Registrant Country: GB
+Name Server: NSZTM1.DIGI.NINJA
+Name Server: NSZTM2.DIGI.NINJA
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2023-02-14T01:45:18Z <<<
+`
+```
+
+As you can see in this WHOIS query, since DNSSEC is not being used in this webserver, information such as the Registration Organization, State/Province, Country, is not redacted.
+
 **What is DNSDumpster**\
 A web-based tool used for gathering information about a target domain, including
 
