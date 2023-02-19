@@ -14,9 +14,13 @@
 ## eJPT
 
 * [eJPT Notes](ejpt/ejpt-notes/README.md)
-  * [Information Gathering](ejpt/ejpt-notes/information-gathering.md)
-  * [Website Recon and Footprinting](ejpt/ejpt-notes/website-recon-and-footprinting.md)
-  * [Website Foot-printing With Netcraft](ejpt/ejpt-notes/website-foot-printing-with-netcraft.md)
+  * [Assessment Methodologies](ejpt/ejpt-notes/assessment-methodologies/README.md)
+    * [Information Gathering](ejpt/ejpt-notes/assessment-methodologies/information-gathering/README.md)
+      * [Introduction To Information Gathering](ejpt/ejpt-notes/assessment-methodologies/information-gathering/information-gathering.md)
+      * [Passive and Active Information Gathering](ejpt/ejpt-notes/assessment-methodologies/information-gathering/passive-and-active-information-gathering.md)
+    * [Footprinting & Scanning](ejpt/ejpt-notes/assessment-methodologies/footprinting-and-scanning.md)
+    * [Enumeration](ejpt/ejpt-notes/assessment-methodologies/enumeration.md)
+    * [Vulnerability Assessment](ejpt/ejpt-notes/assessment-methodologies/vulnerability-assessment.md)
 
 ## TCM Security Notes
 
