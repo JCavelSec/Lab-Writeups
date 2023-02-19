@@ -8,6 +8,6 @@ I'm Julian, my buddies started calling me space cadet so I thought I'd assign my
 
 I started my first security-related job in April of 2022 as a SOC Analyst. This was shortly after graduating from Western Governors University with my Bachelors of Science in Cybersecurity and Information Assurance!
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+### Julian's Resume
 
-{% embed url="https://github.com/JCavelSec/Cavel-Security/blob/main/Julian_C_2.pdf" %}
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
