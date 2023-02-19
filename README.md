@@ -11,3 +11,5 @@ I started my first security-related job in April of 2022 as a SOC Analyst. This 
 ### Julian's Resume
 
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+{% embed url="https://github.com/JCavelSec/Cavel-Security/blob/main/Julian_C_2.pdf" %}
