@@ -14,9 +14,5 @@ Information gathering is the first step of any penetration test and is arguably 
 
 #### [GitHub](https://github.com/alexisahmed)
 
-
-
-###
-
 <table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Introduction To Information Gathering</td><td></td><td><a href="../../information-gathering.md">information-gathering.md</a></td></tr><tr><td></td><td>Passive and Active Information Gathering</td><td></td><td><a href="../../website-recon-and-footprinting.md">website-recon-and-footprinting.md</a></td></tr></tbody></table>
 
